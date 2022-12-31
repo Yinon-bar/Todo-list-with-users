@@ -1,0 +1,30 @@
+.Layout {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.Layout header {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  background: "red";
+  background-color: #008cba;
+}
+.Layout aside {
+  width: 20%;
+  height: 80%;
+  display: flex;
+  background-color: #fff;
+}
+.Layout main {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  background-color: #eeeeee;
+}
+.Layout footer {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  background-color: #333333;
+}
