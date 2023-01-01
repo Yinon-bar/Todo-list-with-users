@@ -1,0 +1,9 @@
+.UsersItem {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333333;
+  border-radius: 1rem;
+  margin: 1rem 0rem;
+  padding: 1rem;
+  flex: 25rem;
+}

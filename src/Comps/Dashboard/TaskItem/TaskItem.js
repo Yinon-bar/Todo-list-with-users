@@ -1,11 +1,10 @@
 import "./TaskItem.css";
 
-function TaskItem({ tasks }) {
+function TaskItem({ task }) {
   return (
     <div className="TaskItem">
-      {tasks.map((tObj) => (
-        <h2>{tObj.title}</h2>
-      ))}
+      <h4>task ID: {task.id}</h4>
+      <h3>{task.title}</h3>
     </div>
   );
 }

@@ -12,8 +12,10 @@ function Tasks() {
   }, []);
 
   return (
-    <div className="Tasks">
-      <TaskItem tasks={tasks} />
+    <div className="TasksList">
+      {tasks.map((tObj) => (
+        <TaskItem key={tObj.id} task={tObj} />
+      ))}
     </div>
   );
 }
