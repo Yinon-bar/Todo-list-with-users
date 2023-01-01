@@ -4,7 +4,7 @@ function TaskItem({ tasks }) {
   return (
     <div className="TaskItem">
       {tasks.map((tObj) => (
-        <h1>{tObj.title}</h1>
+        <h2>{tObj.title}</h2>
       ))}
     </div>
   );
