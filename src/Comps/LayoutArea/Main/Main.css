@@ -1,0 +1,6 @@
+.Main {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
