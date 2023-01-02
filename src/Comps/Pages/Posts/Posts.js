@@ -1,12 +1,12 @@
+import { Route, Routes } from "react-router-dom";
 import appConfig from "../../../Config/appConfig";
 import useFetch from "../../../Services/useFetch";
+import PostSingle from "../../PostsArea/PostSingle/PostSingle";
 import PostsList from "../../PostsArea/PostsList/PostsList";
 import "./Posts.css";
 
 function Posts() {
   const [posts, error, loading] = useFetch(appConfig.posts);
-
-  console.log(posts);
 
   if (error) {
     return (
@@ -28,7 +28,11 @@ function Posts() {
     <div className="Posts">
       <h1>Posts</h1>
       <hr />
-      <PostsList posts={posts} />
+      <Routes>
+        <Route path="" element={<PostsList posts={posts} />} />
+        <Route path=":id" element={<PostSingle posts={posts} />} />
+        <Route path="new" element={<PostSingle />} />
+      </Routes>
     </div>
   );
 }
