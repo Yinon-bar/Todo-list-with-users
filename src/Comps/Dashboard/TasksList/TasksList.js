@@ -1,43 +1,45 @@
 import { useEffect, useState } from "react";
+import useFetch from "../../../Services/useFetch";
 import TaskItem from "../TaskItem/TaskItem";
 import "./TasksList.css";
 
 function Tasks() {
-  const [tasks, setTaska] = useState([]);
+  useFetch("https://jsonplaceholder.typicode.com/todos");
+  // const [tasks, setTaska] = useState([]);
 
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState("");
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((data) => {
-        if (data.ok) {
-          return data.json();
-        }
-        setError(data.status);
-        throw data.status;
-      })
-      .then((todos) => {
-        setLoading(false);
-        setTaska(todos);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/todos")
+  //     .then((data) => {
+  //       if (data.ok) {
+  //         return data.json();
+  //       }
+  //       setError(data.status);
+  //       throw data.status;
+  //     })
+  //     .then((todos) => {
+  //       setLoading(false);
+  //       setTaska(todos);
+  //     });
+  // }, []);
 
-  if (error) {
-    return (
-      <>
-        <h1>Canno't get the data from the server 😕</h1>
-        <h2>Please try again later</h2>
-      </>
-    );
-  }
-  if (loading) {
-    return (
-      <>
-        <h2>Loading... 💿💿💿</h2>
-      </>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <>
+  //       <h1>Canno't get the data from the server 😕</h1>
+  //       <h2>Please try again later</h2>
+  //     </>
+  //   );
+  // }
+  // if (loading) {
+  //   return (
+  //     <>
+  //       <h2>Loading... 💿💿💿</h2>
+  //     </>
+  //   );
+  // }
 
   return (
     <div className="TasksList">
