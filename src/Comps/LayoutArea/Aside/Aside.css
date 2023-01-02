@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.Aside .active {
+  font-weight: bold;
+}
+
 .Aside a {
   text-decoration: none;
   color: #008cba;

@@ -1,11 +1,14 @@
+import { NavLink } from "react-router-dom";
 import "./Aside.css";
 
 function Aside() {
   return (
     <aside className="Aside">
-      <a href="/home">Home</a>
-      <a href="/todo">Todo List</a>
-      <a href="/users">Users</a>
+      <nav>
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/todo">Todo List</NavLink>
+        <NavLink to="/users">Users</NavLink>
+      </nav>
     </aside>
   );
 }
