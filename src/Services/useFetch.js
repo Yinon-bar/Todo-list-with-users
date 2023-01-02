@@ -20,21 +20,7 @@ function useFetch(url) {
       });
   }, []);
 
-  if (error) {
-    return (
-      <>
-        <h1>Canno't get the data from the server 😕</h1>
-        <h2>Please try again later</h2>
-      </>
-    );
-  }
-  if (loading) {
-    return (
-      <>
-        <h2>Loading... 💿💿💿</h2>
-      </>
-    );
-  }
+  return [data, error, loading];
 }
 
 export default useFetch;

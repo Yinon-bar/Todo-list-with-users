@@ -1,19 +1,30 @@
-import { useEffect, useState } from "react";
+import appConfig from "../../../Config/appConfig";
+import useFetch from "../../../Services/useFetch";
 import UsersItem from "../UsersItem/UsersItem";
 import "./UsersList.css";
 
 function UsersList() {
-  const [users, setUsers] = useState([]);
+  const [data, error, loading] = useFetch(appConfig.users);
 
-  useEffect(() => {
-    fetch("https://randomuser.me/api/?results=10")
-      .then((data) => data.json())
-      .then((rndUsers) => setUsers(rndUsers.results));
-  }, []);
+  if (error) {
+    return (
+      <>
+        <h1>Canno't get the data from the server 😕</h1>
+        <h2>Please try again later</h2>
+      </>
+    );
+  }
+  if (loading) {
+    return (
+      <>
+        <h2>Loading... 💿💿💿</h2>
+      </>
+    );
+  }
 
   return (
     <div className="UsersList">
-      {users.map((rndUser, index) => (
+      {data.results.map((rndUser, index) => (
         <UsersItem key={index} rndUser={rndUser} />
       ))}
     </div>
